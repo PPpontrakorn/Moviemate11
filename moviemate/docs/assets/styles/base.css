@@ -1,0 +1,26 @@
+/* รีเซ็ตง่ายๆ + โทนฟอนต์/สีพื้นหลัง */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, "Prompt", Arial, sans-serif;
+  color: #e8eef6;
+  background: #0e1821 url('../images/bg.jpg') center/cover no-repeat fixed;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.placeholder { background:#1e2a35; border:2px solid #3b5568; border-radius: 14px; }
+.placeholder-text { opacity:.6; }
+body {
+  font-family: 'Prompt', 'Kanit', sans-serif;
+  /* ...ที่เหลือตามเดิม */
+}
+h1, h2, h3 {
+  font-family: 'Kanit', sans-serif;
+  letter-spacing: 0.5px;
+}
+.brand {
+  font-family: 'Orbitron', sans-serif; /* ถ้าเพิ่ม Orbitron */
+  font-weight: 700;
+}
