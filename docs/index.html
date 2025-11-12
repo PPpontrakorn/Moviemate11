@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MovieMate</title>
+
+  <!-- CSS แยกเป็น base / layout / components -->
+  <link rel="stylesheet" href="assets/styles/base.css">
+  <link rel="stylesheet" href="assets/styles/components.css">
+  <link rel="stylesheet" href="assets/styles/layout.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">🎬 MovieMate</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" id="nav-toprated" class="active">ภาพยนตร์</a></li>
+          <!-- ✅ เมนู Watchlist + ตัวนับ -->
+          <li><a href="#watchlist">บันทึกไว้ <span id="watch-count" class="badge">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 🔍 Search Bar วาง "ใต้เมนู" -->
+    <div class="search-wrap">
+      <form id="search-form" class="search-bar" autocomplete="off">
+        <input id="search-input" type="text" placeholder="ค้นหาชื่อหนัง" />
+        <button type="submit" class="btn">search</button>
+      </form>
+      <!-- ⬇️ กล่องรายการแนะนำ -->
+      <div id="suggestions" class="suggestions" aria-label="movie suggestions"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Title -->
+    <section class="hero">
+      <h1>ภาพยนตร์เเนะนำ</h1>
+    </section>
+
+    <!-- Spotlight/Random area -->
+    <section id="movie-spotlight" class="spotlight">
+      <!-- โปสเตอร์ + ชื่อ + คะแนน จะถูกเติมภายหลังด้วย JS -->
+      <div class="poster placeholder"></div>
+      <div class="meta">
+        <h2 class="title placeholder-text">ชื่อภาพยนตร์</h2>
+        <p class="subtitle placeholder-text">คะแนน • ปีที่ฉาย</p>
+      </div>
+      <!-- ✅ แถบปุ่ม: สุ่ม + บันทึก Spotlight -->
+      <div class="spotlight-actions">
+        <button id="random-btn" class="btn large">สุ่มหนังแนะนำ</button>
+        <button id="save-spotlight" class="btn icon-btn" title="บันทึกหนังนี้">⭐ บันทึก</button>
+      </div>
+    </section>
+
+    <!-- Search Results Grid -->
+    <section>
+      <div id="results-grid" class="grid"></div>
+    </section>
+
+    <!-- ✅ โซน Watchlist -->
+    <section id="watchlist" aria-label="watchlist">
+      <h2>รายการที่บันทึกไว้</h2>
+      <div id="watchlist-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      จัดทำโดย [นาย พนธกร สิงห์สั่งถ้ำ]
+    </div>
+  </footer>
+
+  <script type="module" src="../src/app.js"></script>
+</body>
+</html>

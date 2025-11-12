@@ -1,0 +1,68 @@
+/* Header + เมนู */
+.site-header { position: sticky; top: 0; backdrop-filter: blur(6px); background: rgba(14,24,33,.65); z-index: 10; }
+.site-header .container { display:flex; align-items:center; gap:20px; padding:14px 0; }
+.brand { font-weight:700; letter-spacing:.5px; }
+
+.main-nav ul { display:flex; gap:14px; list-style:none; padding:0; margin:0; }
+.main-nav a { display:block; padding:10px 16px; background:#aeb6bf33; border-radius:24px; }
+.main-nav a.active { background:#cfd8e333; }
+
+/* Search ใต้เมนู */
+.search-wrap { border-top:1px solid #2a3a46; border-bottom:1px solid #2a3a46; }
+.search-bar { display:flex; gap:10px; padding:12px var(--pad,4%); max-width:1100px; margin:0 auto; }
+.search-bar input {
+  flex:1; padding:12px 14px; border-radius:999px; border:1px solid #3b5568; background:#15202b; color:#e8eef6;
+}
+
+/* Hero */
+.hero h1 {
+  margin: 28px 0 12px; padding:16px 20px;
+  background:#11171d; border:2px solid #3b5568; border-radius:14px;
+  font-size: clamp(28px, 6vw, 64px); font-weight:800;
+}
+
+/* Spotlight */
+.spotlight { display:grid; grid-template-columns: 260px 1fr; gap:20px; align-items:start; margin:16px 0 28px; }
+.spotlight .poster { width:100%; aspect-ratio: 2/3; }
+.spotlight .meta .title { margin:0 0 6px; font-size: clamp(18px, 3vw, 28px); }
+.spotlight .meta .subtitle { margin:0 0 14px; opacity:.8; }
+
+/* Results Grid */
+.grid {
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  margin-bottom: 56px;
+}
+
+/* Footer */
+.site-footer { border-top:1px solid #2a3a46; padding:18px 0; opacity:.8; font-size:14px; }
+
+/* Responsive */
+@media (max-width: 720px) {
+  .spotlight { grid-template-columns: 1fr; }
+}
+
+/* กรอบโปสเตอร์ให้มีความสูงแน่นอน + ครอบรูป */
+.spotlight .poster{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  min-height: 320px;          /* กันบางเบราว์เซอร์ไม่รองรับ aspect-ratio */
+  border-radius: 14px;
+  overflow: hidden;
+  background:#0f1720;         /* สีพื้นถ้ารูปยังมาไม่ถึง */
+  border:2px solid #3b5568;
+}
+.spotlight .poster img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+
+.grid {
+  display:grid; gap:18px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  margin: 12px 0 64px;
+}
+
