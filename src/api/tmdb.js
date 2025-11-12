@@ -1,5 +1,5 @@
 // src/api/tmdb.js
-import { TMDB_API_KEY, TMDB_BASE_URL, TMDB_IMAGE_BASE } from './config.js';
+import { TMDB_API_KEY, TMDB_BASE_URL, TMDB_IMAGE_BASE} from './config.js';
 
 const withKey = (params = {}) => new URLSearchParams({
   api_key: TMDB_API_KEY,
